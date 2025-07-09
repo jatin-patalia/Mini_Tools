@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+    height: 100vh;
+}
+
+@theme {
+    --font-primary: "Satoshi", "sans-serif";
+    --breakpoint-3xl: 120rem;
+    --color-primary: oklch(60.6% 0.25 292.717);
+    --color-hover: oklch(49.1% 0.27 292.581);
+    --color-title: oklch(43.2% 0.232 292.759);
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
 
 const ImageCompressor = () => {
   const [originalImage, setOriginalImage] = useState<File | null>(null)
@@ -46,9 +47,7 @@ const ImageCompressor = () => {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold text-primary mb-4 text-center">
-        Image Compressor (Lossless)
-      </h2>
+      <ToolTitle title="Image Compressor (Lossless)" />
       <input
         type="file"
         accept="image/*"

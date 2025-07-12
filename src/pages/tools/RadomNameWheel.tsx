@@ -1,4 +1,5 @@
 import { useState, useRef, type JSX } from "react"
+import Button from "../../components/Button"
 
 const colors = [
   "#F87171",
@@ -125,12 +126,8 @@ const RandomNameWheel = () => {
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
-      <button
-        onClick={handleInput}
-        className="bg-primary w-full hover:bg-hover text-white px-6 py-2 rounded-xl transition"
-      >
-        Load Names
-      </button>
+
+      <Button title="Load Names" clickHandler={handleInput} />
 
       {names.length > 1 && (
         <div className="relative mx-auto w-[300px] h-[300px] mb-4 mt-4">

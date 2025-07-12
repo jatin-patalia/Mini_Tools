@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Copy } from "lucide-react"
+import ToolTitle from "../../components/ToolTitle"
 
 const NumberConverter = () => {
   const [input, setInput] = useState("")
@@ -41,9 +42,7 @@ const NumberConverter = () => {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-4 text-title">
-        Number System Converter
-      </h2>
+      <ToolTitle title="Number System Converter" />
 
       <div className="mb-4">
         <label className="block font-semibold mb-1">Input Number:</label>

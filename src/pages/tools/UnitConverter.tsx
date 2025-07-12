@@ -1,5 +1,6 @@
 // src/pages/Tools/UnitConverter.tsx
 import { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
 
 const units = {
   length: [
@@ -49,9 +50,7 @@ export default function UnitConverter() {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold text-title mb-4 text-center">
-        Length Unit Converter
-      </h2>
+      <ToolTitle title="Unit Converter" />
 
       <input
         type="number"

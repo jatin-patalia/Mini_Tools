@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "../../components/Button"
+import ToolTitle from "../../components/ToolTitle"
 
 const BoxShadowGenerator = () => {
   const [hOffset, setHOffset] = useState(10)
@@ -16,9 +17,7 @@ const BoxShadowGenerator = () => {
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto mt-10">
-      <h1 className="text-3xl font-bold text-blue-400 text-center mb-6">
-        Box Shadow Generator
-      </h1>
+      <ToolTitle title="Box Shadow Generator" />
 
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div>

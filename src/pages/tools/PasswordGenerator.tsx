@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Button from "../../components/Button"
+import ToolTitle from "../../components/ToolTitle"
 
 const PasswordGenerator: React.FC = () => {
   const [length, setLength] = useState(12)
@@ -30,9 +31,7 @@ const PasswordGenerator: React.FC = () => {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-center text-title">
-        🔐 Password Generator
-      </h2>
+      <ToolTitle title="🔐 Password Generator" />
 
       <div className="text-xl font-mono rounded-xl p-4 mb-4 break-all">
         {password}

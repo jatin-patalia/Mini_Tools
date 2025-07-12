@@ -1,6 +1,8 @@
 // components/TwitterShareGenerator.tsx
 
 import { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
+import Button from "../../components/Button"
 
 const TwitterShareGenerator = () => {
   const [text, setText] = useState("")
@@ -24,9 +26,7 @@ const TwitterShareGenerator = () => {
 
   return (
     <div className="p-4 bg-white rounded-2xl shadow-md max-w-xl mx-auto text-sm">
-      <h2 className="text-2xl font-bold text-title text-center mb-4">
-        Twitter Share Link Generator
-      </h2>
+      <ToolTitle title="Twitter Share Link Generator" />
 
       <div className="space-y-3">
         <input
@@ -62,13 +62,7 @@ const TwitterShareGenerator = () => {
           <span className="font-medium text-gray-600">Generated Link:</span>
           <p className="text-blue-600">{generateLink()}</p>
         </div>
-
-        <button
-          onClick={handleCopy}
-          className="bg-primary w-full hover:bg-hover text-white px-6 py-2 rounded-xl transition"
-        >
-          Copy Link
-        </button>
+        <Button title="Copy Link" clickHandler={handleCopy} />
       </div>
     </div>
   )

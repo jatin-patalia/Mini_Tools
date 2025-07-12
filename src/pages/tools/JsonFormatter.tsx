@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
 
 const JsonFormatter = () => {
   const [input, setInput] = useState("")
@@ -30,9 +31,7 @@ const JsonFormatter = () => {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-center text-title">
-        🧾 JSON Formatter
-      </h2>
+      <ToolTitle title="🧾 JSON Formatter" />
 
       <textarea
         placeholder="Paste your JSON here..."

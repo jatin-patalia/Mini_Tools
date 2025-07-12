@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "../../components/Button"
 
 const BoxShadowGenerator = () => {
   const [hOffset, setHOffset] = useState(10)
@@ -94,12 +95,8 @@ const BoxShadowGenerator = () => {
 
       <div className="bg-gray-100 p-4 rounded-md text-center">
         <code className="text-blue-500 font-mono">box-shadow: {shadow};</code>
-        <button
-          onClick={copyToClipboard}
-          className="w-full mt-4 p-2 bg-blue-400 text-white rounded-md hover:bg-blue-500"
-        >
-          Copy CSS
-        </button>
+
+        <Button clickHandler={copyToClipboard} title="Copy CSS" />
       </div>
     </div>
   )

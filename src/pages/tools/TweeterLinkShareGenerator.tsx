@@ -1,30 +1,30 @@
 // components/TwitterShareGenerator.tsx
 
-import { useState } from "react";
+import { useState } from "react"
 
 const TwitterShareGenerator = () => {
-  const [text, setText] = useState("");
-  const [hashtags, setHashtags] = useState("");
-  const [via, setVia] = useState("");
-  const [url, setUrl] = useState("");
+  const [text, setText] = useState("")
+  const [hashtags, setHashtags] = useState("")
+  const [via, setVia] = useState("")
+  const [url, setUrl] = useState("")
 
   const generateLink = () => {
-    const params = new URLSearchParams();
-    if (text) params.append("text", text);
-    if (hashtags) params.append("hashtags", hashtags);
-    if (via) params.append("via", via.replace(/^@/, ""));
-    if (url) params.append("url", url);
+    const params = new URLSearchParams()
+    if (text) params.append("text", text)
+    if (hashtags) params.append("hashtags", hashtags)
+    if (via) params.append("via", via.replace(/^@/, ""))
+    if (url) params.append("url", url)
 
-    return `https://twitter.com/intent/tweet?${params.toString()}`;
-  };
+    return `https://twitter.com/intent/tweet?${params.toString()}`
+  }
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(generateLink());
-  };
+    navigator.clipboard.writeText(generateLink())
+  }
 
   return (
     <div className="p-4 bg-white rounded-2xl shadow-md max-w-xl mx-auto text-sm">
-      <h2 className="text-xl font-semibold text-blue-400 mb-4">
+      <h2 className="text-2xl font-bold text-title text-center mb-4">
         Twitter Share Link Generator
       </h2>
 
@@ -65,13 +65,13 @@ const TwitterShareGenerator = () => {
 
         <button
           onClick={handleCopy}
-          className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition"
+          className="bg-primary w-full hover:bg-hover text-white px-6 py-2 rounded-xl transition"
         >
           Copy Link
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TwitterShareGenerator;
+export default TwitterShareGenerator

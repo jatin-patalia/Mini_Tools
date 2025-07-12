@@ -1,33 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import Button from "../../components/Button"
 
 const PasswordGenerator: React.FC = () => {
-  const [length, setLength] = useState(12);
-  const [includeNumbers, setIncludeNumbers] = useState(true);
-  const [includeSymbols, setIncludeSymbols] = useState(true);
-  const [password, setPassword] = useState("");
+  const [length, setLength] = useState(12)
+  const [includeNumbers, setIncludeNumbers] = useState(true)
+  const [includeSymbols, setIncludeSymbols] = useState(true)
+  const [password, setPassword] = useState("")
 
   const generatePassword = () => {
-    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "0123456789";
-    const symbols = "!@#$%^&*()_+[]{}|;:,.<>?";
+    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const numbers = "0123456789"
+    const symbols = "!@#$%^&*()_+[]{}|;:,.<>?"
 
-    let characters = letters;
-    if (includeNumbers) characters += numbers;
-    if (includeSymbols) characters += symbols;
+    let characters = letters
+    if (includeNumbers) characters += numbers
+    if (includeSymbols) characters += symbols
 
-    let result = "";
+    let result = ""
     for (let i = 0; i < length; i++) {
-      result += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
+      result += characters.charAt(Math.floor(Math.random() * characters.length))
     }
-    setPassword(result);
-  };
+    setPassword(result)
+  }
 
   // Generate password on first load
   React.useEffect(() => {
-    generatePassword();
-  }, []);
+    generatePassword()
+  }, [])
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
@@ -47,8 +46,8 @@ const PasswordGenerator: React.FC = () => {
           max="32"
           value={length}
           onChange={(e) => {
-            setLength(Number(e.target.value));
-            generatePassword();
+            setLength(Number(e.target.value))
+            generatePassword()
           }}
           className="w-full accent-primary hover:bg-hover"
         />
@@ -60,8 +59,8 @@ const PasswordGenerator: React.FC = () => {
           type="checkbox"
           checked={includeNumbers}
           onChange={() => {
-            setIncludeNumbers(!includeNumbers);
-            generatePassword();
+            setIncludeNumbers(!includeNumbers)
+            generatePassword()
           }}
         />
         <label htmlFor="numbers">Include Numbers</label>
@@ -73,21 +72,15 @@ const PasswordGenerator: React.FC = () => {
           type="checkbox"
           checked={includeSymbols}
           onChange={() => {
-            setIncludeSymbols(!includeSymbols);
-            generatePassword();
+            setIncludeSymbols(!includeSymbols)
+            generatePassword()
           }}
         />
         <label htmlFor="symbols">Include Symbols</label>
       </div>
-
-      <button
-        onClick={generatePassword}
-        className="bg-primary hover:bg-hover text-white font-semibold py-2 px-4 rounded-lg w-full"
-      >
-        🔄 Regenerate Password
-      </button>
+      <Button clickHandler={generatePassword} title="🔄 Regenerate Password" />
     </div>
-  );
-};
+  )
+}
 
-export default PasswordGenerator;
+export default PasswordGenerator

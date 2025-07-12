@@ -1,49 +1,48 @@
-import { useState } from "react";
-import { Copy } from "lucide-react";
+import { useState } from "react"
+import { Copy } from "lucide-react"
+import ToolTitle from "../../components/ToolTitle"
 
 const NumberConverter = () => {
-  const [input, setInput] = useState("");
-  const [base, setBase] = useState("decimal");
+  const [input, setInput] = useState("")
+  const [base, setBase] = useState("decimal")
 
   const parseInput = () => {
     try {
-      if (input.trim() === "") return NaN;
+      if (input.trim() === "") return NaN
       switch (base) {
         case "binary":
-          return parseInt(input, 2);
+          return parseInt(input, 2)
         case "decimal":
-          return parseInt(input, 10);
+          return parseInt(input, 10)
         case "octal":
-          return parseInt(input, 8);
+          return parseInt(input, 8)
         case "hex":
-          return parseInt(input, 16);
+          return parseInt(input, 16)
         default:
-          return NaN;
+          return NaN
       }
     } catch {
-      return NaN;
+      return NaN
     }
-  };
+  }
 
-  const parsed = parseInput();
-  const isValid = !isNaN(parsed);
+  const parsed = parseInput()
+  const isValid = !isNaN(parsed)
 
   const formats = {
     binary: isValid ? parsed.toString(2) : "-",
     decimal: isValid ? parsed.toString(10) : "-",
     octal: isValid ? parsed.toString(8) : "-",
     hex: isValid ? parsed.toString(16).toUpperCase() : "-",
-  };
+  }
 
   const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-  };
+    navigator.clipboard.writeText(text)
+  }
 
   return (
-    <div className="max-w-xl mx-auto p-4 bg-white rounded-2xl shadow-md">
-      <h2 className="text-2xl font-bold text-center mb-4 text-title">
-        Number System Converter
-      </h2>
+    <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
+      <ToolTitle title="Number System Converter" />
 
       <div className="mb-4">
         <label className="block font-semibold mb-1">Input Number:</label>
@@ -88,7 +87,7 @@ const NumberConverter = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default NumberConverter;
+export default NumberConverter

@@ -1,38 +1,37 @@
-import { useState } from "react";
+import { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
 
 const JsonFormatter = () => {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [input, setInput] = useState("")
+  const [output, setOutput] = useState("")
+  const [error, setError] = useState("")
+  const [copied, setCopied] = useState(false)
 
   const handleFormat = () => {
     try {
-      const parsed = JSON.parse(input);
-      const formatted = JSON.stringify(parsed, null, 2);
-      setOutput(formatted);
-      setError("");
+      const parsed = JSON.parse(input)
+      const formatted = JSON.stringify(parsed, null, 2)
+      setOutput(formatted)
+      setError("")
     } catch (err) {
-      setError("Invalid JSON format.");
-      setOutput("");
+      setError("Invalid JSON format.")
+      setOutput("")
     }
-  };
+  }
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(output);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(output)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch {
-      setCopied(false);
+      setCopied(false)
     }
-  };
+  }
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-white rounded-2xl shadow-md border border-blue-200">
-      <h2 className="text-2xl font-bold mb-4 text-center text-title">
-        🧾 JSON Formatter
-      </h2>
+    <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
+      <ToolTitle title="🧾 JSON Formatter" />
 
       <textarea
         placeholder="Paste your JSON here..."
@@ -44,7 +43,7 @@ const JsonFormatter = () => {
       <div className="text-center mt-4">
         <button
           onClick={handleFormat}
-          className="bg-primary hover:bg-hover text-white px-6 py-2 rounded-xl transition"
+          className="bg-primary hover:bg-hover w-full text-white px-6 py-2 rounded-xl transition"
         >
           Format JSON
         </button>
@@ -68,7 +67,7 @@ const JsonFormatter = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default JsonFormatter;
+export default JsonFormatter

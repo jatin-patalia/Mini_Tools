@@ -1,14 +1,14 @@
-import age_calculator from "/age calculator.png";
-import password_generator from "/password generator.png";
-import json_formatter from "/json formatter.png";
-import text_converter from "/text converter.png";
-import image_compress from "/image compressor.png";
-import unit_converter from "/unit converter.png";
-import twitter from "/twitter.png";
-import name_generator from "/name generator.png";
-import number_converter from "/number converter.png";
-import facebook from "/facebook.png";
-import linkedIn from "/linkedin.png";
+import age_calculator from "/age calculator.png"
+import password_generator from "/password generator.png"
+import json_formatter from "/json formatter.png"
+import text_converter from "/text converter.png"
+import image_compress from "/image compressor.png"
+import unit_converter from "/unit converter.png"
+import twitter from "/twitter.png"
+import name_generator from "/name generator.png"
+import number_converter from "/number converter.png"
+import facebook from "/facebook.png"
+import linkedIn from "/linkedin.png"
 
 export const toolsList = [
   {
@@ -68,10 +68,10 @@ export const toolsList = [
     summary: "Select random name and choose using wheel",
   },
   {
-    name: "Facebook Link Share Generator",
-    path: "/facebook_link_generator",
+    name: "Box Shadow Generator",
+    path: "/box_shadow_generator",
     icon: facebook,
-    summary: "Generate link for facebook to share to others.",
+    summary: "Generate box shadow by selecting colours.",
   },
   {
     name: "Twitter Link Share Generator",
@@ -85,4 +85,4 @@ export const toolsList = [
     icon: age_calculator,
     summary: "Calculate age based on birth date.",
   },
-];
+]

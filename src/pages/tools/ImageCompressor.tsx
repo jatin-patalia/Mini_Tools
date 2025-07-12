@@ -1,54 +1,53 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import ToolTitle from "../../components/ToolTitle"
 
 const ImageCompressor = () => {
-  const [originalImage, setOriginalImage] = useState<File | null>(null);
-  const [compressedURL, setCompressedURL] = useState<string | null>(null);
+  const [originalImage, setOriginalImage] = useState<File | null>(null)
+  const [compressedURL, setCompressedURL] = useState<string | null>(null)
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+    const file = e.target.files?.[0]
     if (file && file.type.startsWith("image/")) {
-      setOriginalImage(file);
-      compressImage(file);
+      setOriginalImage(file)
+      compressImage(file)
     }
-  };
+  }
 
   const compressImage = (file: File) => {
-    const reader = new FileReader();
+    const reader = new FileReader()
 
     reader.onload = (event) => {
-      const img = new Image();
-      img.src = event.target?.result as string;
+      const img = new Image()
+      img.src = event.target?.result as string
 
       img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
+        const canvas = document.createElement("canvas")
+        canvas.width = img.width
+        canvas.height = img.height
 
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext("2d")
         if (ctx) {
-          ctx.drawImage(img, 0, 0);
+          ctx.drawImage(img, 0, 0)
           canvas.toBlob(
             (blob) => {
               if (blob) {
-                const url = URL.createObjectURL(blob);
-                setCompressedURL(url);
+                const url = URL.createObjectURL(blob)
+                setCompressedURL(url)
               }
             },
             file.type,
             1 // quality = 1 (lossless)
-          );
+          )
         }
-      };
-    };
+      }
+    }
 
-    reader.readAsDataURL(file);
-  };
+    reader.readAsDataURL(file)
+  }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white shadow-md rounded-2xl p-6">
-      <h2 className="text-2xl font-bold text-primary mb-4 text-center">
-        Image Compressor (Lossless)
-      </h2>
+    <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
+      <ToolTitle title="Image Compressor (Lossless)" />
       <input
         type="file"
         accept="image/*"
@@ -88,7 +87,7 @@ const ImageCompressor = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ImageCompressor;
+export default ImageCompressor

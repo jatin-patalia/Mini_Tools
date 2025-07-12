@@ -1,23 +1,23 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import UnitConverter from "../pages/tools/UnitConverter";
+import { Routes, Route } from "react-router-dom"
+import Home from "../pages/Home"
+import UnitConverter from "../pages/tools/UnitConverter"
 // import Layout from "../pages/layout/Layout";
-import PasswordGenerator from "../pages/tools/PasswordGenerator";
-import Layout from "../pages/layout/Layout";
-import JsonFormatter from "../pages/tools/JsonFormatter";
-import TextCaseConverter from "../pages/tools/TextCaseConverter";
-import NumberConverter from "../pages/tools/NumberConverter";
-import QRCodeGenerator from "../pages/tools/QrCodeGenerator";
-import AgeCalculator from "../pages/tools/AgeCalculator";
-import ImageCompressor from "../pages/tools/ImageCompressor";
-import RandomNameWheel from "../pages/tools/RadomNameWheel";
-import TwitterShareGenerator from "../pages/tools/TweeterLinkShareGenerator";
-import AboutUS from "../pages/AboutUs";
-import ContactUs from "../pages/ContactUs";
-import FacebookLinkGenerator from "../pages/tools/FacebookLinkGenerator";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-import TermsConditions from "../pages/TermsConditions";
-import Disclaimer from "../pages/Disclaimer";
+import PasswordGenerator from "../pages/tools/PasswordGenerator"
+import Layout from "../pages/layout/Layout"
+import JsonFormatter from "../pages/tools/JsonFormatter"
+import TextCaseConverter from "../pages/tools/TextCaseConverter"
+import NumberConverter from "../pages/tools/NumberConverter"
+import QRCodeGenerator from "../pages/tools/QrCodeGenerator"
+import AgeCalculator from "../pages/tools/AgeCalculator"
+import ImageCompressor from "../pages/tools/ImageCompressor"
+import RandomNameWheel from "../pages/tools/RadomNameWheel"
+import TwitterShareGenerator from "../pages/tools/TweeterLinkShareGenerator"
+import AboutUS from "../pages/AboutUs"
+import ContactUs from "../pages/ContactUs"
+import PrivacyPolicy from "../pages/PrivacyPolicy"
+import TermsConditions from "../pages/TermsConditions"
+import Disclaimer from "../pages/Disclaimer"
+import BoxShadowGenerator from "../pages/tools/BoxShadowGenerator"
 const AppRoutes = () => {
   return (
     <Routes>
@@ -38,10 +38,7 @@ const AppRoutes = () => {
           path="/tweeter_link_generator"
           element={<TwitterShareGenerator />}
         />
-        <Route
-          path="/facebook_link_generator"
-          element={<FacebookLinkGenerator />}
-        />
+        <Route path="/box_shadow_generator" element={<BoxShadowGenerator />} />
         <Route path="/contact_us" element={<ContactUs />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/terms_condition" element={<TermsConditions />} />
@@ -49,7 +46,7 @@ const AppRoutes = () => {
         <Route path="/terms_conditions" element={<TermsConditions />} />
       </Route>
     </Routes>
-  );
-};
+  )
+}
 
-export default AppRoutes;
+export default AppRoutes

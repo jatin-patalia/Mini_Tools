@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { fullAge } from "../../utils.ts/fullAge"
+import ToolTitle from "../../components/ToolTitle"
 
 const AgeCalculator = () => {
   const [dob, setDob] = useState("")
@@ -7,9 +8,7 @@ const AgeCalculator = () => {
 
   return (
     <div className="p-6 rounded-2xl shadow-lg w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-4 text-title">
-        Age Calculator
-      </h2>
+      <ToolTitle title="Age Calculator" />
 
       <div className="mb-6">
         <label className="block font-semibold mb-1">

@@ -80,9 +80,9 @@ export const toolsList = [
     summary: "Generate link for facebook to share to others.",
   },
   {
-    name: "Age Calculator",
-    path: "/age_calculator",
+    name: "QR code Generator",
+    path: "/qr_code_generator",
     icon: age_calculator,
-    summary: "Calculate age based on birth date.",
+    summary: "Generate QR codes for URLs, text, and more.",
   },
 ]

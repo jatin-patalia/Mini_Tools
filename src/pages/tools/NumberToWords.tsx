@@ -37,7 +37,7 @@ const tens = [
 ]
 
 const convertToWords = (num: number): string => {
-  if (num === 0) return "zero"
+  if (num === 0) return "Zero"
 
   const helper = (n: number): string => {
     if (n < 20) return ones[n]
@@ -59,22 +59,41 @@ const convertToWords = (num: number): string => {
     return "number too large"
   }
 
-  return helper(num)
+  const capitalizeWords = (str: string): string =>
+    str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+
+  return capitalizeWords(helper(num))
 }
 
 const NumberToWordsConverter = () => {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
+  const [error, setError] = useState("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setInput(value)
 
-    const num = parseInt(value.trim(), 10)
-    if (!isNaN(num) && num >= 0) {
-      setOutput(convertToWords(num))
+    if (/^\d*$/.test(value)) {
+      // Valid number (including empty string)
+      setError("")
+      if (value === "") {
+        setOutput("")
+        return
+      }
+      const num = parseInt(value, 10)
+      if (!isNaN(num)) {
+        setOutput(convertToWords(num))
+      } else {
+        setOutput("")
+      }
     } else {
+      // Contains non-digit characters
       setOutput("")
+      setError("Please enter numbers only")
     }
   }
 
@@ -93,9 +112,10 @@ const NumberToWordsConverter = () => {
           placeholder="e.g. 123"
           className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
         />
+        {error && <p className="text-red-500 mt-2 text-sm">{error}</p>}
       </div>
 
-      {output && (
+      {output && !error && (
         <div className="mt-4 text-center text-lg font-medium text-gray-700">
           {output}
         </div>

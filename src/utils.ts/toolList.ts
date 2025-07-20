@@ -7,8 +7,9 @@ import unit_converter from "/unit converter.png"
 import twitter from "/twitter.png"
 import name_generator from "/name generator.png"
 import number_converter from "/number converter.png"
-import facebook from "/facebook.png"
-import linkedIn from "/linkedin.png"
+import numberToWords from "/number to words.png"
+import boxShadow from "/box shadow.png"
+import twitterLink from "/twitter link.png"
 
 export const toolsList = [
   {
@@ -70,13 +71,13 @@ export const toolsList = [
   {
     name: "Box Shadow Generator",
     path: "/box_shadow_generator",
-    icon: facebook,
+    icon: boxShadow,
     summary: "Generate box shadow by selecting colours.",
   },
   {
     name: "Twitter Link Share Generator",
     path: "/tweeter_link_generator",
-    icon: linkedIn,
+    icon: twitterLink,
     summary: "Generate link for facebook to share to others.",
   },
   {
@@ -84,5 +85,11 @@ export const toolsList = [
     path: "/qr_code_generator",
     icon: age_calculator,
     summary: "Generate QR codes for URLs, text, and more.",
+  },
+  {
+    name: "Number to Words Converter",
+    path: "/number_to_words",
+    icon: numberToWords,
+    summary: "Convert numbers into their word representation.",
   },
 ]

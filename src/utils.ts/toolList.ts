@@ -10,6 +10,8 @@ import number_converter from "/number converter.png"
 import numberToWords from "/number to words.png"
 import boxShadow from "/box shadow.png"
 import twitterLink from "/twitter link.png"
+import qrcode from "/qr-code.png"
+import agePredictor from "/age-predict.png"
 
 export const toolsList = [
   {
@@ -83,7 +85,7 @@ export const toolsList = [
   {
     name: "QR code Generator",
     path: "/qr_code_generator",
-    icon: age_calculator,
+    icon: qrcode,
     summary: "Generate QR codes for URLs, text, and more.",
   },
   {
@@ -91,5 +93,11 @@ export const toolsList = [
     path: "/number_to_words",
     icon: numberToWords,
     summary: "Convert numbers into their word representation.",
+  },
+  {
+    name: "Name Insight Tool",
+    path: "/name_insights",
+    icon: agePredictor,
+    summary: "Predict age, gender and natinality from name (just for fun).",
   },
 ]

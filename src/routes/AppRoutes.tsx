@@ -18,6 +18,8 @@ import PrivacyPolicy from "../pages/PrivacyPolicy"
 import TermsConditions from "../pages/TermsConditions"
 import Disclaimer from "../pages/Disclaimer"
 import BoxShadowGenerator from "../pages/tools/BoxShadowGenerator"
+import NumberToWordsConverter from "../pages/tools/NumberToWords"
+import NameInsights from "../pages/tools/NameInsight"
 const AppRoutes = () => {
   return (
     <Routes>
@@ -39,6 +41,9 @@ const AppRoutes = () => {
           element={<TwitterShareGenerator />}
         />
         <Route path="/box_shadow_generator" element={<BoxShadowGenerator />} />
+        <Route path="/number_to_words" element={<NumberToWordsConverter />} />
+        <Route path="/name_insights" element={<NameInsights />} />
+
         <Route path="/contact_us" element={<ContactUs />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/terms_condition" element={<TermsConditions />} />
